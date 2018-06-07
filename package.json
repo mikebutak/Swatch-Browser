@@ -1,0 +1,51 @@
+{
+  "name": "interview-challenge",
+  "version": "1.0.0",
+  "description": "Welcome to Helpful Human's at home proficiency challenge! This challenge gauges your knowledge on a few different metrics that we use, in part, to evaluate your skills. In this repo, you will find the assets that are required to replicate the design that is also included in this repo. Both .sketch and .png assets are available.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d --watch",
+    "server-dev": "nodemon --inspect server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikebutak/interview-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikebutak/interview-challenge/issues"
+  },
+  "homepage": "https://github.com/mikebutak/interview-challenge#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.6.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "postcss-fixes": "^2.0.1",
+    "postcss-loader": "^2.1.5",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "uglifyjs-webpack-plugin": "^1.2.5"
+  }
+}
