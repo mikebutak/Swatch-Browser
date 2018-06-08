@@ -10,9 +10,10 @@ const sidebar = (props) =>  {
         cursor: 'pointer',
         marginTop: '8px'
     }
+    console.log('classes.other',classes.other)
 
     return (
-        <nav className="col-sm-3 col-md-2 hidded-xs-down bg-light sidebar" id={classes.red}>
+        <nav className="col-sm-3 col-md-2 hidden-xs-down bg-light sidebar" id={classes.other}>
             <button type="button" style={btnStyle} className="btn btn-light">Random Color</button>
             <ul className="nav flex-column">
                 <li className="nav-item">
