@@ -4,9 +4,9 @@ import Swatch from './Swatch/Swatch';
 const tinycolor = require('tinycolor2');
 
 const listViewPage = (props) => {
-    console.log('first color in colors array in ListView Page: ', props.colors[0].hex)
-    let trialShades = tinycolor(props.colors[0]).monochromatic().map(t => t.toHexString());
-    console.log('trialShades in monochrome: ', trialShades);
+    // console.log('first color in colors array in ListView Page: ', props.colors[0].hex)
+    // let trialShades = tinycolor(props.colors[0]).monochromatic().map(t => t.toHexString());
+    // console.log('trialShades in monochrome: ', trialShades);
 
     return (
         <div className="container-fluid pad">
