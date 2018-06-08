@@ -1,22 +1,13 @@
 import React from 'react';
-import classes from './Sidebar.css';
+import './Sidebar.css';
 
 const sidebar = (props) =>  {
-    const btnStyle = {
-        backgroundColor: '#ffffff',
-        font: 'inherit',
-        border: '1px solid #828585dd',
-        padding: '2px',
-        cursor: 'pointer',
-        marginTop: '8px'
-    }
-    console.log('classes.other',classes.other)
 
     return (
-        <nav className="col-sm-3 col-md-2 hidden-xs-down bg-light sidebar" id={classes.other}>
-            <button type="button" style={btnStyle} className="btn btn-light">Random Color</button>
+        <nav className="col-sm-3 col-md-2 hidden-xs-down bg-light sidebar reach">
+            <button type="button" className="btn btn-light" id="btnStyle">Random Color</button>
             <ul className="nav flex-column">
-                <li className="nav-item">
+                <li className="nav-item" >
                     <a className="nav-link active" href="#">
                         Red
                     </a>

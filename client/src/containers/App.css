@@ -1,3 +1,11 @@
-.other {
-    color: green;
+#colAdj {
+    padding: 0px;
+}
+
+.full {
+    height: 100%;
+}
+
+.tall {
+    height: 90%;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import colors from '../assets/colors';
 import './App.css';
+import colors from '../assets/colors';
 import Layout from '../components/Layout/Layout';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
@@ -18,31 +18,30 @@ class App extends Component {
     }
 
     render() {
-        // console.log('does app see its style sheet: ', classes.other);
-
         const cust = {
             display: "inline"
         }
 
         let view = (
-            <ListView />
+            <ListView 
+                colors={this.state.primaryColors}
+            />
         )
         if (this.state.view === 'detail' ) {
             view = (
-                <DetailView />
+                <DetailView 
+                    shades={this.state.shadeColors}
+                />
             )
         }
 
         return (
-            <div>
-                <h3 className="other">Testing Stylesheet</h3>
+            <div className="tall">
                 <Header />
-                <div className="container-fluid">
-                    <div className="row justify-content-start my-row">
-                        <div className="col-md-2 col-sm-4 col my-col">
+                <div className="container-fluid full">
+                    <div className="row justify-content-start my-row full">
                             <Sidebar />
-                        </div>
-                        <div className="col-md-10 col-sm-8 col my-col">
+                        <div className="col" id="colAdj">
                             <Layout >
                                 {view}
                             </Layout >

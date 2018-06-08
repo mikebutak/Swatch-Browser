@@ -1,0 +1,15 @@
+.split {
+    height: 33.33%;
+}
+
+.pad {
+    padding-top: 55px;
+    padding-bottom: 0px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.col-pad {
+    padding-left: 15px;
+    padding-right: 15px;
+}

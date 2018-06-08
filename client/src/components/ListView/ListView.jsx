@@ -1,8 +1,21 @@
 import React from 'react';
-import classes from './ListView.css';
+import './ListView.css';
+import ListViewPage from './ListViewPage/ListViewPage';
+import Pagination from './ListViewPage/Pagination/Pagination';
 
 const listView = (props) =>  (
-    <p>ListView compiling properly</p>
+    <div className="full">
+        <div className="row stretch">
+            <ListViewPage 
+                colors={props.colors}
+            />
+        </div>
+        <div className="row fit">
+            <div className="col justify-content-around">
+                <Pagination />
+            </div>
+        </div>
+    </div>
 )
 
 export default listView;
