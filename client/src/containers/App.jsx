@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import colors from '../assets/colors';
 import Layout from '../components/Layout/Layout';
 import Header from '../components/Header/Header';
@@ -13,19 +14,42 @@ class App extends Component {
         super(props)
         this.state = {
             view: 'list',
-            primaryColors: colors.primary,
+            primaryColors: colors.loadColors,
+            displayColors: colors.loadColors,
             shadeColors: [null, null, null, null, null],
             page: 1,
             focalSwatch: null
         }
+
         this.paginationHandler = this.paginationHandler.bind(this);
         this.pageChangeHandler = this.pageChangeHandler.bind(this);
         this.exitDetailHandler = this.exitDetailHandler.bind(this);
         this.swatchClickHandler = this.swatchClickHandler.bind(this);
         this.generateShades = this.generateShades.bind(this);
         this.randomColorHandler = this.randomColorHandler.bind(this);
+        this.getColors = this.getColors.bind(this);
     };
 
+    getColors () {
+        axios.get('/colors')
+        .then((colorObj) => {
+            let colorData = [...this.state.primaryColors];
+            for (var i = 0; i < colorObj.data.length; i++ ) {
+                colorData[i] = colorObj.data[i];
+            }
+            this.setState({
+                primaryColors: colorData
+            });
+        })
+        .catch((err) => {
+            console.log(`Err msg from get req to /colors: ${err}.`);
+        })
+    }
+
+    componentDidMount() {
+        this.getColors();
+    }
+    
     generateShades (hex) {
         let newShades = [...this.state.shadeColors];
         newShades[1] = tinycolor(this.state.focalSwatch).desaturate(25).toHexString();
@@ -51,6 +75,7 @@ class App extends Component {
     };
 
     paginationHandler (e) {
+        console.log('id of clicked page:', e.target.id);
         this.setState({page: e.target.id}, this.pageChangeHandler)
     };
 
@@ -65,11 +90,11 @@ class App extends Component {
         const updatedColors = [...this.state.primaryColors];
         let j = 0;
         for ( let i =startIndex; i < stopIndex ; i ++ ) {
-            updatedColors[j] = colors.primary[i];
+            updatedColors[j] = this.state.primaryColors[i];
             j++;
         }
         this.setState({
-            primaryColors: updatedColors
+            displayColors: updatedColors
         });
     };
     
@@ -81,7 +106,7 @@ class App extends Component {
         let view = (
             <ListView 
                 click={this.swatchClickHandler}
-                colors={this.state.primaryColors}
+                colors={this.state.displayColors}
                 pageSelect={this.paginationHandler}
                 pageNum={this.state.page}
             />

@@ -1,3 +1,19 @@
+const loadColors = [
+    {id: 1, hex: '#FFC0CB'},
+    {id: 2, hex: '#FF69B4'},
+    {id: 3, hex: '#9932CC'},
+    {id: 4, hex: '#8B008B'},
+    {id: 5, hex: '#FFA07A'},
+    {id: 6, hex: '#FA8072'},
+    {id: 7, hex: '#FF1493'},
+    {id: 8, hex: '#C71585'},
+    {id: 9, hex: '#DB7093'},
+    {id: 10, hex: '#E6E6FA'},
+    {id: 11, hex: '#D8BFD8'},
+    {id: 12, hex: '#DDA0DD'}
+];
+
+
 const primary = [
     {id: 1, hex: '#FFC0CB'},
     {id: 2, hex: '#FF69B4'},
@@ -119,6 +135,6 @@ const primary = [
 
 
 
-module.exports = {
-    primary
+export default {
+    loadColors,
 };
