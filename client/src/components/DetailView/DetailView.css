@@ -1,0 +1,65 @@
+.full {
+    height: 100%;
+}
+
+.focal-row {
+    height: 61%;
+    /* display: flex;
+    flex-direction: row; */
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.cards-row {
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0px;
+}
+
+.button-row {
+    height: 9%;
+    width: 100%;
+    margin-left: 0px;
+    align: center;
+}
+
+.subhead {
+    width: 100%;
+    height:10%;
+    margin-left: 0px;
+}
+
+.detail-gutter {
+    width: 10%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.focal-space {
+    width: 80%;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.noPad {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 18%;
+}
+
+.btnStyle2 {
+    width: 20%;
+    background-color: #ffffff;
+    font: inherit;
+    border: 1px solid #828585dd;
+    margin-top: 17px;
+    margin-bottom: 12px;
+    padding: 2px;
+    cursor: pointer;
+}

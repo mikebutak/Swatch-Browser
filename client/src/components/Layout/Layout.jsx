@@ -7,9 +7,9 @@ const layout = (props) => {
     }
     return (
         <Aux>
-            <main className="col full" >
+            {/* <main className="col full" > */}
             {props.children}
-            </main>
+            {/* </main> */}
         </Aux>
     )
 }

@@ -4,9 +4,6 @@ import Swatch from './Swatch/Swatch';
 const tinycolor = require('tinycolor2');
 
 const listViewPage = (props) => {
-    // console.log('first color in colors array in ListView Page: ', props.colors[0].hex)
-    // let trialShades = tinycolor(props.colors[0]).monochromatic().map(t => t.toHexString());
-    // console.log('trialShades in monochrome: ', trialShades);
 
     return (
         <div className="container-fluid pad">
@@ -14,21 +11,25 @@ const listViewPage = (props) => {
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[0].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[1].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[2].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[3].hex}
+                        click={props.click}
                     />
                 </div>
             </div>
@@ -36,21 +37,25 @@ const listViewPage = (props) => {
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[4].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[5].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[6].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col col-pad">
                     <Swatch 
                         clr={props.colors[7].hex}
+                        click={props.click}
                     />
                 </div>
             </div>
@@ -58,21 +63,25 @@ const listViewPage = (props) => {
                 <div className="col">
                     <Swatch 
                         clr={props.colors[8].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col">
                     <Swatch 
                         clr={props.colors[9].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col">
                     <Swatch 
                         clr={props.colors[10].hex}
+                        click={props.click}
                     />
                 </div>
                 <div className="col">
                     <Swatch 
                         clr={props.colors[11].hex}
+                        click={props.click}
                     />
                 </div>
             </div>

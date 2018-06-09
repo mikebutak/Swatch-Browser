@@ -1,0 +1,19 @@
+#focalCardStyles {
+    border-radius: 9px;
+    height: 95%;
+    width: 100%;
+}
+
+#focalLabel {
+    margin-top: 0px;
+}
+
+#focalCardBdy {
+    height: 20%;
+    padding-top: 18px;
+    font-size: 28px;
+}
+
+.focalPic {
+    height: 80%;
+}

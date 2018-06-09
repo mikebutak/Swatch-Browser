@@ -8,6 +8,7 @@ const listView = (props) =>  {
         <div className="full">
             <div className="row stretch">
                 <ListViewPage 
+                    click={props.click}
                     colors={props.colors}
                 />
             </div>

@@ -1,6 +1,7 @@
-#cardStyles {
+.cardStyles {
     border-radius: 9px;
     height: 90%;
+    cursor: pointer;
 }
 
 #label {
@@ -10,17 +11,16 @@
 #cardBdy {
     height: 20%;
     padding-top: 4px;
-    /* padding-bottom: 10%; */
 }
 
 .pic {
     height: 80%;
 }
-
+/* 
 .redOne {
     width: 80%;
     height: 80%;
     background: #702e05;
     margin: 2% auto;
     border-radius: 5px;
-}
+} */

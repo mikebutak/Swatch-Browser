@@ -11,18 +11,28 @@ class App extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            view: 'list',
+            view: 'detail',
             primaryColors: colors.primary,
             shadeColors: colors.shades,
             page: 1,
-            focalSwatch: null
+            focalSwatch: colors.primary[0]
         }
         this.paginationHandler = this.paginationHandler.bind(this);
         this.updateColors = this.updateColors.bind(this);
+        this.exitDetailHandler = this.exitDetailHandler.bind(this);
+        this.swatchClickHandler = this.swatchClickHandler.bind(this);
     }  
+
+    swatchClickHandler (e) {
+        console.log('e.target.id: ', e.target.id);
+    }
 
     paginationHandler (e) {
         this.setState({page: e.target.id}, this.updateColors)
+    }
+
+    exitDetailHandler () {
+        this.setState({ view: 'list'})
     }
 
     updateColors () {
@@ -47,6 +57,7 @@ class App extends Component {
 
         let view = (
             <ListView 
+                click={this.swatchClickHandler}
                 colors={this.state.primaryColors}
                 pageSelect={this.paginationHandler}
                 pageNum={this.state.page}
@@ -56,6 +67,8 @@ class App extends Component {
             view = (
                 <DetailView 
                     shades={this.state.shadeColors}
+                    focal={this.state.focalSwatch}
+                    clear={this.exitDetailHandler}
                 />
             )
         }
