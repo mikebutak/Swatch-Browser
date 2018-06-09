@@ -117,15 +117,8 @@ const primary = [
     {id: 108, parent: null, hex: '#FFE4E1'}
 ]
 
-const shades = [
-    {id: 'A', parent: '#E6E6FA', hex: '#ffffff'},
-    {id: 'A', parent: '#E6E6FA', hex: '#eaeafb'},
-    {id: 'A', parent: '#E6E6FA', hex: '#d4d4f7'},
-    {id: 'A', parent: '#E6E6FA', hex: '#bfbff2'}
-]
 
 
 module.exports = {
-    primary,
-    shades
+    primary
 };

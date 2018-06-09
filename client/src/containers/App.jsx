@@ -23,10 +23,10 @@ class App extends Component {
         this.exitDetailHandler = this.exitDetailHandler.bind(this);
         this.swatchClickHandler = this.swatchClickHandler.bind(this);
         this.generateShades = this.generateShades.bind(this);
+        this.randomColorHandler = this.randomColorHandler.bind(this);
     };
 
     generateShades (hex) {
-        console.log('focalSwatch:', this.state.focalSwatch);
         let newShades = [...this.state.shadeColors];
         newShades[1] = tinycolor(this.state.focalSwatch).desaturate(25).toHexString();
         newShades[0] = tinycolor(newShades[1]).desaturate(25).toHexString();
@@ -36,11 +36,17 @@ class App extends Component {
         this.setState({shadeColors: newShades});
     };
 
+    randomColorHandler () {
+        let clr = tinycolor.random().toHexString();
+        this.setState({focalSwatch: clr},
+            () => {this.generateShades(clr)})
+        this.setState({ view: 'detail'})
+    }
+
     swatchClickHandler (e) {
         let clr = e.target.id;
         this.setState({focalSwatch: clr}, 
-            ()=>{this.generateShades(clr)
-            })
+            ()=>{this.generateShades(clr)})
         this.setState({view: 'detail'})
     };
 
@@ -95,7 +101,9 @@ class App extends Component {
                 <Header />
                 <div className="container-fluid full">
                     <div className="row justify-content-start my-row full">
-                            <Sidebar />
+                            <Sidebar 
+                                randClick={this.randomColorHandler}
+                            />
                         <div className="col" id="colAdj">
                             <Layout >
                                 {view}

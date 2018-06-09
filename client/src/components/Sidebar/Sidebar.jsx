@@ -5,7 +5,7 @@ const sidebar = (props) =>  {
 
     return (
         <nav className="col-sm-3 col-md-2 hidden-xs-down mySideBar sidebar">
-            <button type="button" className="btn btn-light btnStyle" >Random Color</button>
+            <button type="button" onClick={props.randClick} className="btn btn-light btnStyle" >Random Color</button>
             <ul className="nav flex-column">
                 <li className="nav-item" >
                     <a className="nav-link active" href="#">
