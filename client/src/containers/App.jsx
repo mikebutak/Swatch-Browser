@@ -1,41 +1,58 @@
 import React, { Component } from 'react';
-import './App.css';
 import colors from '../assets/colors';
 import Layout from '../components/Layout/Layout';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
 import ListView from '../components/ListView/ListView';
+import tinycolor from 'tinycolor2';
 import DetailView from '../components/DetailView/DetailView';
+import './App.css';
 
 class App extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            view: 'detail',
+            view: 'list',
             primaryColors: colors.primary,
-            shadeColors: colors.shades,
+            shadeColors: [null, null, null, null, null],
             page: 1,
-            focalSwatch: colors.primary[0]
+            focalSwatch: null
         }
         this.paginationHandler = this.paginationHandler.bind(this);
-        this.updateColors = this.updateColors.bind(this);
+        this.pageChangeHandler = this.pageChangeHandler.bind(this);
         this.exitDetailHandler = this.exitDetailHandler.bind(this);
         this.swatchClickHandler = this.swatchClickHandler.bind(this);
-    }  
+        this.generateShades = this.generateShades.bind(this);
+    };
+
+    generateShades (hex) {
+        console.log('focalSwatch:', this.state.focalSwatch);
+        let newShades = [...this.state.shadeColors];
+        newShades[1] = tinycolor(this.state.focalSwatch).desaturate(25).toHexString();
+        newShades[0] = tinycolor(newShades[1]).desaturate(25).toHexString();
+        newShades[2] = this.state.focalSwatch;
+        newShades[3] = tinycolor(this.state.focalSwatch).brighten(5).toHexString();
+        newShades[4] = tinycolor(newShades[3]).brighten(5).toHexString();
+        this.setState({shadeColors: newShades});
+    };
 
     swatchClickHandler (e) {
-        console.log('e.target.id: ', e.target.id);
-    }
+        let clr = e.target.id;
+        this.setState({focalSwatch: clr}, 
+            ()=>{this.generateShades(clr)
+            })
+        this.setState({view: 'detail'})
+    };
 
     paginationHandler (e) {
-        this.setState({page: e.target.id}, this.updateColors)
-    }
+        this.setState({page: e.target.id}, this.pageChangeHandler)
+    };
 
     exitDetailHandler () {
         this.setState({ view: 'list'})
-    }
+    };
 
-    updateColors () {
+    pageChangeHandler () {
         let newPage = this.state.page;
         const startIndex = (newPage * 12) - 12;
         const stopIndex = startIndex + 12;
@@ -48,7 +65,7 @@ class App extends Component {
         this.setState({
             primaryColors: updatedColors
         });
-    }
+    };
     
     render() {
         const cust = {

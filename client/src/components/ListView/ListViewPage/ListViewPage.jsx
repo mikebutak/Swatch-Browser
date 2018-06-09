@@ -1,7 +1,6 @@
 import React from "react";
 import './ListViewPage.css';
 import Swatch from './Swatch/Swatch';
-const tinycolor = require('tinycolor2');
 
 const listViewPage = (props) => {
 

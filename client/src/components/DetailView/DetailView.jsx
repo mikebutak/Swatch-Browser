@@ -11,7 +11,7 @@ const detailView = (props) => (
             <div className="detail-gutter"></div>
             <div className="focal-space">
                 <FocalSwatch 
-                    clr={props.focal.hex}
+                    clr={props.focal}
                 />
             </div>
             <div className="detail-gutter"></div>
@@ -21,27 +21,27 @@ const detailView = (props) => (
             <div className="row focal-space">
                     <div className="noPad">
                         <Swatch 
-                            clr={props.shades[0].hex}
+                            clr={props.shades[0]}
                         />
                     </div>
                     <div className="noPad">
                         <Swatch 
-                            clr={props.shades[1].hex}
+                            clr={props.shades[1]}
                         />
                     </div>
                     <div className="noPad">
                         <Swatch 
-                            clr={props.focal.hex}
+                            clr={props.shades[2]}
                         />
                     </div>
                     <div className="noPad">
                         <Swatch 
-                            clr={props.shades[2].hex}
+                            clr={props.shades[3]}
                         />
                     </div>
                     <div className="noPad">
                         <Swatch 
-                            clr={props.shades[3].hex}
+                            clr={props.shades[4]}
                         />
                     </div>
                 </div>
