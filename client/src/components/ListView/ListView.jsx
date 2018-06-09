@@ -5,7 +5,7 @@ import Pagination from './ListViewPage/Pagination/Pagination';
 
 const listView = (props) =>  {
     return (
-        <div className="full">
+        <div className="listView-container">
             <div className="row stretch">
                 <ListViewPage 
                     click={props.click}

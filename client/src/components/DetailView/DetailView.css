@@ -63,3 +63,7 @@
     padding: 2px;
     cursor: pointer;
 }
+
+.detailView-container {
+    height: 100%;
+}

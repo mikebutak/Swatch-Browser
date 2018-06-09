@@ -4,7 +4,7 @@ import Swatch from '../ListView/ListViewPage/Swatch/Swatch';
 import FocalSwatch from './FocalSwatch/FocalSwatch';
 
 const detailView = (props) => (
-    <div className="full">
+    <div className="detailView-container">
         <div className="row subhead">
         </div>
         <div className="row focal-row">

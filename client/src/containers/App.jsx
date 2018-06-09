@@ -100,7 +100,7 @@ class App extends Component {
             <div className="tall">
                 <Header />
                 <div className="container-fluid full">
-                    <div className="row justify-content-start my-row full">
+                    <div className="row justify-content-start my-row tall">
                             <Sidebar 
                                 randClick={this.randomColorHandler}
                             />
