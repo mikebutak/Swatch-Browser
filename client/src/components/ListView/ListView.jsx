@@ -4,6 +4,7 @@ import ListViewPage from './ListViewPage/ListViewPage';
 import Pagination from './ListViewPage/Pagination/Pagination';
 
 const listView = (props) =>  {
+    console.log('props.colors', props.colors);
     return (
         <div className="listView-container">
             <div className="row stretch">
