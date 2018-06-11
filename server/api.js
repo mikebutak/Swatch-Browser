@@ -12,7 +12,6 @@ app.get('/', (req, res ) => {
 })
 
 app.get('/colors', (req, res) => {
-    console.log('get request received at /colors endpoint');
     queries.getColors(sendData, res)
 })
 
