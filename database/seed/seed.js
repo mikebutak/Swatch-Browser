@@ -41,7 +41,12 @@ const logResult = (param) => {
     console.log(param);
 }
 
-dropDB()
-.then(()=> {
-    seedDB();
-});
+const prepDB = () => {
+    dropDB()
+    .then(()=> {
+        seedDB();
+    });
+}
+
+
+module.exports = prepDB;
