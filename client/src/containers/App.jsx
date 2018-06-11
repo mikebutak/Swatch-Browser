@@ -75,7 +75,6 @@ class App extends Component {
     };
 
     paginationHandler (e) {
-        console.log('id of clicked page:', e.target.id);
         this.setState({page: e.target.id}, this.pageChangeHandler)
     };
 
