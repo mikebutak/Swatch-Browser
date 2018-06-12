@@ -6,7 +6,7 @@ module.exports = {
   development: {
     client: 'mysql',
     connection: {
-      host: process.env.DATABASE_URL || '127.0.0.1',
+      host: process.env.DATABASE_URL,
       user: process.env.DATABASE_USER,
       insecureAuth: true,
       password: process.env.DATABASE_PASSWORD,
@@ -20,7 +20,7 @@ module.exports = {
   staging: {
     client: 'mysql',
     connection: {
-      host: process.env.DATABASE_URL || '127.0.0.1',
+      host: process.env.DATABASE_URL,
       user: process.env.DATABASE_USER,
       insecureAuth: true,
       password: process.env.DATABASE_PASSWORD,
@@ -38,7 +38,7 @@ module.exports = {
   production: {
     client: 'mysql',
     connection: {
-      host: process.env.DATABASE_URL || '127.0.0.1',
+      host: process.env.DATABASE_URL,
       user: process.env.DATABASE_USER,
       insecureAuth: true,
       password: process.env.DATABASE_PASSWORD,
