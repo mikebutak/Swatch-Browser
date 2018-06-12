@@ -26,7 +26,7 @@
 //   module.exports = knex;
 
 const config = require('../knexfile');
-const env = 'development';
+const env = 'production';
 const knex = require('knex')(config[env]);
 
 module.exports = knex;
