@@ -1,5 +1,5 @@
 const app = require('./api');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3306;
 
 // the reason I have abstracted this functionality from the
 // rest of the express API is because otherwise the test suite 
