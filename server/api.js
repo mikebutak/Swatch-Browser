@@ -16,8 +16,6 @@ app.get('/colors', (req, res) => {
 })
 
 app.post('/colors', (req, res) => {
-    console.log('server received post to /colors endpoint');
-    console.log('req.query.hex on post to /colors: ', req.query.hex);
     const hex = req.query.hex;
     queries.addColorWithVerify( hex, sendData, res);
 })
